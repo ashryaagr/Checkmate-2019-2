@@ -1,6 +1,5 @@
 const express = require('express');
 const router = new express.Router();
-const passport = require('../passport');
 
 
 router.get('', (req, res)=>{
@@ -30,7 +29,7 @@ router.get('/register', (req, res)=>{
 });
 
 
-router.get('/game', passport.authenticate('cookie', {session: false}), (req, res)=>{
+router.get('/game', (req, res)=>{
 	res.send("Welcome to the game :)")
 }) ;
 

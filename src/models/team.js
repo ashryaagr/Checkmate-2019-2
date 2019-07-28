@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const passportLocalMongoose = require('passport-local-mongoose');
 const bcrypt = require('bcryptjs') ;
 const jwt = require('jsonwebtoken') ;
 
@@ -86,7 +85,6 @@ teamSchema.methods.generateAuthToken = async function () {
 	return token
 } ;
 
-teamSchema.plugin(passportLocalMongoose);
 
 const Team = mongoose.model('Team', teamSchema);
 

@@ -34,14 +34,16 @@ npm install
 - We will not be using REST. Graphql will be used as the query language. 
 - In backend we will use the npm package graphql-tools. Read following tutorials to learn more :
     - <https://medium.com/@haidermalik504/building-apis-with-graphql-nodejs-and-mongoose-64655c062dd2>
-    - Above tutorial should be sufficient. If you want to learn more, go to <https://www.apollographql.com/docs/graphql-tools/>
+    - <https://blog.pusher.com/handling-authentication-in-graphql/>
+    - Above tutorials should be sufficient. If you want to learn more, go to <https://www.apollographql.com/docs/graphql-tools/>
 - The endpoint for all CRUD ( Create, Read, Update, Delete) operations will be /graphql
 - Till the frontend is integrated into backend we will use Postman and GraphiQL.
 - Frontend team should read <https://graphql.org/graphql-js/graphql-clients/> . This would be sufficient for frontend.
 - The directory for frontend files is ./public
 - Frontend team, you can take advantage of partials to refactor repetitive code. See ./public/index.ejs for syntax to use partials.
+- Frontend team should go to <localhost:3000/graphql> and click on Docs in upper right corner to get the list of available queries, mutations, and their input/return types that they expect.
+- Frontend team can take advantage of the feature that you direct graphql what fields to return ( among the available fields given in return type)
 - Backend team, please ensure that there is no problem of circular imports in your commit.
-- We will use the npm package "passport" for authentication.
 
 
 ### Contributions
