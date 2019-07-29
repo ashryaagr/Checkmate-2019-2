@@ -42,6 +42,15 @@ npm install
 - The directory for frontend files is ./public
 - Frontend team, you can take advantage of partials to refactor repetitive code. See ./public/index.ejs for syntax to use partials.
 - Frontend team should go to <localhost:3000/graphql> and click on Docs in upper right corner to get the list of available queries, mutations, and their input/return types that they expect.
+- Answers will be verfied by sending a post request to /check_answer . The body of request will have :
+    - _id : This will be the id of the question.
+    - answer : Answer given by user
+- Other endpoints available are :
+    - GET /login : will render login page
+    - GET /register : will render registration page
+    - GET /game : will render the main game page
+    - GET /instructions : will render instructions page
+    - POST /time : will send the server time in the form "HH:MM:SS"
 - Frontend team can take advantage of the feature that you direct graphql what fields to return ( among the available fields given in return type)
 - Backend team, please ensure that there is no problem of circular imports in your commit.
 

@@ -38,11 +38,11 @@ const teamSchema = new mongoose.Schema({
 		default: 0
 	},
 	x_coordinate: {
-		type: mongoose.Schema.Types.Decimal,
+		type: Number,
 		default: 0.0
 	},
 	y_coordinate: {
-		type: mongoose.Schema.Types.Decimal,
+		type: Number,
 		default: 0.0
 	},
 	correctly_answered : [{
@@ -54,13 +54,13 @@ const teamSchema = new mongoose.Schema({
 		}
 	}],
 }, {
-	timestamp: true
+	timestamps: true
 });
 
 teamSchema.pre('save', async function (next) {
 	const team = this ;
 	if (team.isModified('password')) {
-		team.password = await bcrypt.hash(user.password, 8)
+		team.password = await bcrypt.hash(team.password, 8)
 	}
 	next()
 }) ;
@@ -79,7 +79,7 @@ teamSchema.methods.generateAuthToken = async function () {
 	const team = this ;
 	const token = jwt.sign({ _id: team._id.toString() }, process.env.SECRET_KEY) ;
 
-	team.tokens = user.tokens.concat({ token }) ;
+	team.tokens = team.tokens.concat({ token }) ;
 	await team.save() ;
 
 	return token
