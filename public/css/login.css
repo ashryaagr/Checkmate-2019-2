@@ -1,0 +1,22 @@
+html,body{
+    background-image: url('http://paperlief.com/images/avengers-2-wallpaper-wallpaper-2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+}
+
+.card{
+height: 360px;
+margin-top: auto;
+margin-bottom: auto;
+width: 400px;
+background-color: rgba(0,0,0,0.5) !important;
+}
+
+.input-group{
+	padding: 10px;
+}
+
+.submit-button{
+	margin-top: 25px;
+}

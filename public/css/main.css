@@ -1,1 +1,46 @@
-
+     .container{
+    height: 100%;
+    align-content: center;
+    }
+    
+    .card-header h3{
+    color: white;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 45px;
+    padding-top: 5px;
+    }
+    
+    .input-group-prepend span{
+    width: 50px;
+    background-color: #FFC312;
+    color: black;
+    border:0 !important;
+    }
+    
+    input:focus{
+    outline: 0 0 0 0  !important;
+    box-shadow: 0 0 0 0 !important;
+    }
+    
+    .input-group{
+        font-family: 'PT Sans', sans-serif;
+    }
+    
+    .submit_btn{
+    color: black;
+    background-color: #FFC312;
+    width: 100px;
+    }
+    
+    .submit_btn:hover{
+    color: black;
+    background-color: white;
+    }
+    
+    .links{
+    color: white;
+    }
+    
+    .links a{
+    margin-left: 4px;
+    }

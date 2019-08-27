@@ -1,9 +1,11 @@
 const express = require('express');
 const router = new express.Router();
+const path = require('path') ;
 
+const views = path.join(__dirname, '../../public')  ;
 
 router.get('', (req, res)=>{
-	res.render('index') ;
+	res.sendFile(views +'/index.html')
 });
 
 
@@ -20,12 +22,12 @@ router.get('/instructions', (req, res)=>{
 
 
 router.get('/login', (req, res)=>{
-	res.send("will render login page here...")
+	res.sendFile(views +'/login.html')
 });
 
 
 router.get('/register', (req, res)=>{
-	res.send("Will render regsitration page here...")
+	res.sendFile(views +'/register.html')
 });
 
 

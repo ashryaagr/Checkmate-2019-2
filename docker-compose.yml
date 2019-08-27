@@ -1,0 +1,21 @@
+version: '3'
+services:
+  node_server:
+    build: ./checkmate
+    restart: always
+    ports:
+      - 3000:3000
+    expose:
+      - 3000
+    links:
+      - mongo
+    env_file:
+      - config/production.env
+  mongo:
+    mongo:
+        container_name: mongo
+        image: mongo
+        expose:
+          - 27017
+        ports:
+          - "27017:27017"

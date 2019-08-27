@@ -1,0 +1,18 @@
+html,body{
+    background-image: url('https://www.rollingstone.com/wp-content/uploads/2018/06/avengers-infinity-war-thanos-3cf740a9-8435-4dff-99a7-bdac8386d041.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+}
+	
+.card{
+height: 450px;
+margin-top: auto;
+margin-bottom: auto;
+width: 400px;
+background-color: rgba(0,0,0,0.5) !important;
+}
+
+.submit-button{
+	margin-top: 25px;
+}
