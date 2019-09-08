@@ -28,7 +28,7 @@ app.use(authmiddleware);
 
 
 // Setup static directory to serve
-app.use(express.static(publicDirectoryPath)) ;
+app.use(express.static(publicDirectoryPath, {index: '_'})) ;
 
 
 // Next 5 lines help in parsing input and getting req.body
