@@ -1,19 +1,7 @@
  <html>
 
- <head>
-   <title>CHECKMATE - VORMIR</title>
-   <link rel="shortcut icon" href="../assets/img/favicon.png" type="image/x-icon">
-   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-   <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
-   <link href="https://fonts.googleapis.com/css?family=Merriweather&display=swap" rel="stylesheet">
-   <script src="../build/socket.io.min.js"></script>
-   <script src="../build/easyrtc.js"></script>
-   <script src="../build/build.js"></script>
-   <script src="./components/question-modal.js"></script>
- </head>
+ <%- include ../partials/head.html %>
+
  <script>
    window.dataLayer = window.dataLayer || [];
 
@@ -105,89 +93,13 @@
        </div>
      </div>
    </div>
-   <div class="modal fade" id="modalCart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-     aria-hidden="true">
-     <div class="modal-dialog" role="document">
-       <div class="modal-content">
-         <div class="modal-header">
-           <h4 class="modal-title text-center" id="myModalLabel">LEADERBOARD</h4>
-         </div>
-         <div class="modal-body">
-           <table class="table table-hover">
-             <thead>
-               <tr>
-                 <th>#</th>
-                 <th>NAME</th>
-               </tr>
-             </thead>
-             <tbody>
-               <tr>
-                 <th scope="row">1</th>
-                 <td>TEAM 1</td>
-                 <td><a><i class="fas fa-times"></i></a></td>
-               </tr>
-               <tr>
-                 <th scope="row">2</th>
-                 <td>TEAM 2</td>
-                 <td><a><i class="fas fa-times"></i></a></td>
-               </tr>
-               <tr>
-                 <th scope="row">3</th>
-                 <td>TEAM 3</td>
-                 <td><a><i class="fas fa-times"></i></a></td>
-               </tr>
-               <tr>
-                 <th scope="row">4</th>
-                 <td>TEAM 4</td>
-                 <td><a><i class="fas fa-times"></i></a></td>
-               </tr>
-             </tbody>
-           </table>
-         </div>
-         <div class="modal-footer"> <button type="button" class="btn btn-outline-primary"
-             data-dismiss="modal">Close</button> <button class="btn btn-primary">Checkout</button> </div>
-       </div>
-     </div>
-   </div>
-   <style>
-     .modal-header {
-       background-color: #22b9d4;
-       color: white;
-       font-size: 17px;
-       font-family: 'Merriweather', serif;
 
-     }
+   <%- include ../partials/leaderboard.html %>
 
-     .fa-question-circle {
-       font-size: 5.5em;
-     }
-
-     .question-content {
-       margin-top: 20px;
-     }
-
-     .modal {
-       text-align: center;
-     }
-
-     @media screen and (min-width: 768px) {
-       .modal:before {
-         display: inline-block;
-         vertical-align: middle;
-         height: 100%;
-       }
-     }
-
-     .modal-dialog {
-       display: inline-block;
-       text-align: left;
-       vertical-align: middle;
-     }
-   </style>
-   <a-scene vr-mode-ui="enabled: false" data-is-home="false" debug-controller="enabled: true"
-     environment="preset: volcano; seed: s1vpYwZH7K; shadow: true"
-     oasis-audio="isHome: ; zoneSong: https://supermedium.com/oasis-audio/Broke_For_Free_-_02_-_My_Always_Mood.mp3"
-     teleport-refresh ques-box networked-scene="serverURL: shy-teeth.glitch.me; room: s1vpYwZH7K; debug: true"
+   <a-scene vr-mode-ui="enabled: false" random-color-environment data-is-home="false" debug-controller="enabled: true"
+     environment="preset: arches; seed: 1UyzC8OGJ5; shadow: true"
+     oasis-audio="isHome: ; zoneSong: https://supermedium.com/oasis-audio/Lobo_Loco_-_13_-_Visions_of_2018_ID_783.mp3"
+     teleport-refresh ques-box networked-scene="serverURL: shy-teeth.glitch.me; room: 1UyzC8OGJ5; debug: true"
      cursor="rayOrigin: mouse">
      <a-assets> <img id="portalImg" src="../assets/img/portal.png"> <img id="shadowImg" src="../assets/img/shadow.png">
        <img id="sliceImg" src="../assets/img/slice.png">
@@ -242,7 +154,7 @@
      <a-entity id="leftHandObj" obj-model="obj: #leftGloveObj" visible="false"></a-entity>
      <a-entity id="avatarObj" obj-model="obj: #avatarObjAsset" visible="false"></a-entity>
      <a-entity id="cameraRig" networked="template: #rigTemplate; showLocalTemplate: false">
-       <a-camera id="camera" look-controls position="3 1.6 0"
+       <a-camera id="camera" look-controls position="0 1.6 0"
          networked="template: #headTemplate; showLocalTemplate: false" touch="distance: 1.8">
          <a-entity id="cameraFront" position="0 0 -3"></a-entity>
          <a-entity id="teleportFader" geometry="primitive: box" material="color: #111; shader: flat; side: back"
@@ -250,8 +162,8 @@
        </a-camera>
      </a-entity>
      <a-entity id="portals" mixin="hoverAnimation">
-       <a-entity class="portal" mixin="portal" oasis-portal="href: ../oasis/qrIWaJo6L6.html"
-         material="pano: ../assets/img/portal/forest.jpg" position="-8.754395496406737 0 14.009553763866709">
+       <a-entity class="portal" mixin="portal" oasis-portal="href: game/3"
+         material="pano: ../assets/img/portal/forest.jpg" position="11.415252756608204 0 -13.784612251788593">
          <a-entity class="portalEffect1" obj-model="obj: ../assets/models/portal/portal.obj" additive
            material="color: #03c1e2; opacity: 0.6; depthWrite: false; shader: flat; transparent: true; src: #portalImg"
            position="0 0 -0.017" rotation="0 90 90" scale="3.116 3.116 3.116"
@@ -266,8 +178,8 @@
            text="color: #4ef580; align: center; value: EARTH; side: double; width: 4; zOffset: 0.01" position="0 1.3 0">
          </a-entity>
        </a-entity>
-       <a-entity class="portal" mixin="portal" oasis-portal="href: ../oasis/VAt4jz3Vh1.html"
-         material="pano: ../assets/img/portal/contact.jpg" position="12 0 3">
+       <a-entity class="portal" mixin="portal" oasis-portal="href: game/5"
+         material="pano: ../assets/img/portal/contact.jpg" position="11.308175822351117 0 -5.451873204689466">
          <a-entity class="portalEffect1" obj-model="obj: ../assets/models/portal/portal.obj" additive
            material="color: #03c1e2; opacity: 0.6; depthWrite: false; shader: flat; transparent: true; src: #portalImg"
            position="0 0 -0.017" rotation="0 90 90" scale="3.116 3.116 3.116"
@@ -282,8 +194,8 @@
            text="color: #4ef580; align: center; value: KNOWHERE; side: double; width: 4; zOffset: 0.01"
            position="0 1.3 0"></a-entity>
        </a-entity>
-       <a-entity class="portal" mixin="portal" oasis-portal="href: ../oasis/1UyzC8OGJ5.html"
-         material="pano: ../assets/img/portal/arches.jpg" position="-11 0 17.03757071256167">
+       <a-entity class="portal" mixin="portal" oasis-portal="href: game/4"
+         material="pano: ../assets/img/portal/volcano.jpg" position="-13.198677054099168 0 -16.292209976693062">
          <a-entity class="portalEffect1" obj-model="obj: ../assets/models/portal/portal.obj" additive
            material="color: #03c1e2; opacity: 0.6; depthWrite: false; shader: flat; transparent: true; src: #portalImg"
            position="0 0 -0.017" rotation="0 90 90" scale="3.116 3.116 3.116"
@@ -295,11 +207,11 @@
            animation="property: object3D.rotation.x; from: 0; to: 6.283185; dur: 15000; loop: true; easing: linear">
          </a-entity>
          <a-entity class="portalText" mixin="slice font" slice9="color:  #111; height: 0.3; width: 2.5; opacity: 0.7"
-           text="color: #4ef580; align: center; value: ZEN-WHOBERI; side: double; width: 4; zOffset: 0.01"
+           text="color: #4ef580; align: center; value: VORMIR; side: double; width: 4; zOffset: 0.01"
            position="0 1.3 0"></a-entity>
        </a-entity>
-       <a-entity class="portal" mixin="portal" oasis-portal="href: ../oasis/DjY6lT7jFD.html"
-         material="pano: ../assets/img/portal/japan.jpg" position="16.36597546033973 0 4">
+       <a-entity class="portal" mixin="portal" oasis-portal="href: game/2"
+         material="pano: ../assets/img/portal/japan.jpg" position="8.042766309926531 0 8.9402328987326">
          <a-entity class="portalEffect1" obj-model="obj: ../assets/models/portal/portal.obj" additive
            material="color: #03c1e2; opacity: 0.6; depthWrite: false; shader: flat; transparent: true; src: #portalImg"
            position="0 0 -0.017" rotation="0 90 90" scale="3.116 3.116 3.116"
@@ -314,8 +226,8 @@
            text="color: #4ef580; align: center; value: TITAN; side: double; width: 4; zOffset: 0.01" position="0 1.3 0">
          </a-entity>
        </a-entity>
-       <a-entity class="portal" mixin="portal" oasis-portal="href: ../oasis/zJyX0vO06B.html"
-         material="pano: ../assets/img/portal/egypt.jpg" position="6 0 6.09085036713099">
+       <a-entity class="portal" mixin="portal" oasis-portal="href: game/6"
+         material="pano: ../assets/img/portal/egypt.jpg" position="-10 0 -19.21847230000144">
          <a-entity class="portalEffect1" obj-model="obj: ../assets/models/portal/portal.obj" additive
            material="color: #03c1e2; opacity: 0.6; depthWrite: false; shader: flat; transparent: true; src: #portalImg"
            position="0 0 -0.017" rotation="0 90 90" scale="3.116 3.116 3.116"
@@ -331,7 +243,7 @@
            position="0 1.3 0"></a-entity>
        </a-entity>
        <a-entity class="portal" mixin="portal" oasis-portal="href: ../index.html; isHomePortal: true"
-         material="pano: ../assets/img/portal/tron.jpg" position="-6 0 3">
+         material="pano: ../assets/img/portal/tron.jpg" position="-2 0 3">
          <a-entity class="portalEffect1" obj-model="obj: ../assets/models/portal/portal.obj" additive
            material="color: #03c1e2; opacity: 0.6; depthWrite: false; shader: flat; transparent: true; src: #portalImg"
            position="0 0 -0.017" rotation="0 90 90" scale="3.116 3.116 3.116"
@@ -347,7 +259,7 @@
            position="0 1.3 0"></a-entity>
        </a-entity>
        <a-entity class="portal" mixin="portal" oasis-portal="href: ; isBackPortal: true"
-         material="pano: ../assets/img/portal/volcano.jpg" position="2 0 5">
+         material="pano: ../assets/img/portal/arches.jpg" position="2 0 3">
          <a-entity class="portalEffect1" obj-model="obj: ../assets/models/portal/portal.obj" additive
            material="color: #03c1e2; opacity: 0.6; depthWrite: false; shader: flat; transparent: true; src: #portalImg"
            position="0 0 -0.017" rotation="0 90 90" scale="3.116 3.116 3.116"
@@ -364,18 +276,18 @@
        </a-entity>
      </a-entity>
      <a-entity id="portalShadows" position="0 0.05 0">
-       <a-entity mixin="shadow" position="-8.754395496406737 0 14.009553763866709"></a-entity>
-       <a-entity mixin="shadow" position="14.86946318869785 0 -15.055630326820237"></a-entity>
-       <a-entity mixin="shadow" position="-6.613640567308639 0 17.03757071256167"></a-entity>
-       <a-entity mixin="shadow" position="16.36597546033973 0 -7.702669638502064"></a-entity>
-       <a-entity mixin="shadow" position="-18.774874276467177 0 6.09085036713099"></a-entity>
+       <a-entity mixin="shadow" position="11.415252756608204 0 -13.784612251788593"></a-entity>
+       <a-entity mixin="shadow" position="11.308175822351117 0 -5.451873204689466"></a-entity>
+       <a-entity mixin="shadow" position="-13.198677054099168 0 -16.292209976693062"></a-entity>
+       <a-entity mixin="shadow" position="8.042766309926531 0 8.9402328987326"></a-entity>
+       <a-entity mixin="shadow" position="15.336537567185232 0 -19.21847230000144"></a-entity>
        <a-entity mixin="shadow" position="-2 0 3"></a-entity>
        <a-entity mixin="shadow" position="2 0 3"></a-entity>
      </a-entity>
      <a-entity>
        <a-entity pop-up-question="q_no: 1" id="question-0" class="question-board"
          obj-model="obj: ../assets/models/question_board/question_board.obj; mtl: ../assets/models/question_board/materials.mtl "
-         position="23.3581268737388 3 29.25315796721212" scale="25 25 25" rotation="0 -30 0">
+         position="11 3 -26" scale="25 25 25" rotation="0 -30 0">
          <a-entity class="portalText"
            text="color: #4ef580; align: center; value: QUESTION\n1; side: double; width: 1; xOffset: 0.02; zOffset: 0.1"
            position="0 0 0" rotation="0 0 0" scale="0.3 0.3 0.3"></a-entity>
@@ -384,7 +296,7 @@
      <a-entity>
        <a-entity pop-up-question="q_no: 2" id="question-1" class="question-board"
          obj-model="obj: ../assets/models/question_board/question_board.obj; mtl: ../assets/models/question_board/materials.mtl "
-         position="-20 3 22.504841885816294" scale="25 25 25" rotation="0 -30 0">
+         position="-29.230154754293597 3 17.094648835003774" scale="25 25 25" rotation="0 -30 0">
          <a-entity class="portalText"
            text="color: #4ef580; align: center; value: QUESTION\n2; side: double; width: 1; xOffset: 0.02; zOffset: 0.1"
            position="0 0 0" rotation="0 0 0" scale="0.3 0.3 0.3"></a-entity>
@@ -393,7 +305,7 @@
      <a-entity>
        <a-entity pop-up-question="q_no: 3" id="question-2" class="question-board"
          obj-model="obj: ../assets/models/question_board/question_board.obj; mtl: ../assets/models/question_board/materials.mtl "
-         position="-27.07143240960056 3 24.298799513811645" scale="25 25 25" rotation="0 -30 0">
+         position="26.623759977865816 3 -19.127179310479782" scale="25 25 25" rotation="0 -30 0">
          <a-entity class="portalText"
            text="color: #4ef580; align: center; value: QUESTION\n3; side: double; width: 1; xOffset: 0.02; zOffset: 0.1"
            position="0 0 0" rotation="0 0 0" scale="0.3 0.3 0.3"></a-entity>
@@ -402,7 +314,7 @@
      <a-entity>
        <a-entity pop-up-question="q_no: 4" id="question-3" class="question-board"
          obj-model="obj: ../assets/models/question_board/question_board.obj; mtl: ../assets/models/question_board/materials.mtl "
-         position="25.82541889850567 3 19.019471906049613" scale="25 25 25" rotation="0 -30 0">
+         position="-23.486650943109794 3 27.586785121303777" scale="25 25 25" rotation="0 -30 0">
          <a-entity class="portalText"
            text="color: #4ef580; align: center; value: QUESTION\n4; side: double; width: 1; xOffset: 0.02; zOffset: 0.1"
            position="0 0 0" rotation="0 0 0" scale="0.3 0.3 0.3"></a-entity>
@@ -411,7 +323,7 @@
      <a-entity>
        <a-entity pop-up-question="q_no: 5" id="question-4" class="question-board"
          obj-model="obj: ../assets/models/question_board/question_board.obj; mtl: ../assets/models/question_board/materials.mtl "
-         position="-19.451079888972195 3 -12.20576791248781" scale="25 25 25" rotation="0 -30 0">
+         position="-3 3 -21.52493635863654" scale="25 25 25" rotation="0 0 0">
          <a-entity class="portalText"
            text="color: #4ef580; align: center; value: QUESTION\n5; side: double; width: 1; xOffset: 0.02; zOffset: 0.1"
            position="0 0 0" rotation="0 0 0" scale="0.3 0.3 0.3"></a-entity>

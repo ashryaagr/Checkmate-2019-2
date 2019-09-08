@@ -1,0 +1,79 @@
+<div class="modal fade" id="modalCart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+ aria-hidden="true">
+ <div class="modal-dialog" role="document">
+   <div class="modal-content">
+     <div class="modal-header">
+       <h4 class="modal-title text-center" id="myModalLabel">LEADERBOARD</h4>
+     </div>
+     <div class="modal-body">
+       <table class="table table-hover">
+         <thead>
+           <tr>
+             <th>#</th>
+             <th>NAME</th>
+           </tr>
+         </thead>
+         <tbody>
+           <tr>
+             <th scope="row">1</th>
+             <td>TEAM 1</td>
+             <td><a><i class="fas fa-times"></i></a></td>
+           </tr>
+           <tr>
+             <th scope="row">2</th>
+             <td>TEAM 2</td>
+             <td><a><i class="fas fa-times"></i></a></td>
+           </tr>
+           <tr>
+             <th scope="row">3</th>
+             <td>TEAM 3</td>
+             <td><a><i class="fas fa-times"></i></a></td>
+           </tr>
+           <tr>
+             <th scope="row">4</th>
+             <td>TEAM 4</td>
+             <td><a><i class="fas fa-times"></i></a></td>
+           </tr>
+         </tbody>
+       </table>
+     </div>
+     <div class="modal-footer"> <button type="button" class="btn btn-outline-primary"
+         data-dismiss="modal">Close</button> <button class="btn btn-primary">Checkout</button> </div>
+   </div>
+ </div>
+</div>
+<style>
+ .modal-header {
+   background-color: #22b9d4;
+   color: white;
+   font-size: 17px;
+   font-family: 'Merriweather', serif;
+
+ }
+
+ .fa-question-circle {
+   font-size: 5.5em;
+ }
+
+ .question-content {
+   margin-top: 20px;
+ }
+
+ .modal {
+   text-align: center;
+ }
+
+ @media screen and (min-width: 768px) {
+   .modal:before {
+     display: inline-block;
+     vertical-align: middle;
+     height: 100%;
+   }
+ }
+
+ .modal-dialog {
+   display: inline-block;
+   text-align: left;
+   vertical-align: middle;
+ }
+</style>
