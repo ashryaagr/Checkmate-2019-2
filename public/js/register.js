@@ -1,3 +1,11 @@
+function setCookie(cname, cvalue, exdays) {
+  var d = new Date();
+  d.setTime(d.getTime() + (exdays*24*60*60*1000));
+  var expires = "expires="+ d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+
 $("#submit").click(function (event) {
 	event.preventDefault();
 	$("#submit").val('Registering...')
@@ -11,13 +19,14 @@ $("#submit").click(function (event) {
 	const body = {
 		"query": "mutation register( input : { " + JSON.stringify(details) + " })"
 	};
-	// TODO: This AJAX Call returns a JWT token on success, which is to be stored in a browser cookie
+
 	$.ajax({
-		url: "/user",
+		url: "/graphql",
 		method: 'POST',
 		data: body,
-		success: function(){
+		success: function(jwt){
 			alert("Successfuly registered user") ;
+			setCookie("jwt", jwt, 1);
 			window.location.href = window.location.origin + "/game"
 		},
 		error : function () {
