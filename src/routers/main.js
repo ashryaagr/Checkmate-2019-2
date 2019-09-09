@@ -5,7 +5,7 @@ const path = require('path') ;
 const views = path.join(__dirname, '../../public')  ;
 
 router.get('', (req, res)=>{
-	res.sendFile(views +'/register.html')
+	res.render('register')
 });
 
 
@@ -22,18 +22,21 @@ router.get('/instructions', (req, res)=>{
 
 
 router.get('/login', (req, res)=>{
-	res.sendFile(views +'/login.html')
+	res.render('login')
 });
 
 
 router.get('/register', (req, res)=>{
-	res.sendFile(views +'/register.html')
+	res.render('/register')
 });
 
 
 router.get('/game', (req, res)=>{
-	res.sendFile(views +'/index.html')
+	res.render('index')
 }) ;
 
+router.get('/game/:id/', (req,res)=>{
+	res.render('oasis/'+ req.params.id)
+}) ;
 
 module.exports = router ;
