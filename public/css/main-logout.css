@@ -4,6 +4,10 @@ body {
   -webkit-text-size-adjust: 100%; /* Prevent font scaling in landscape while allowing user zoom */
 }
 
+iframe{
+  margin-top: 80px;
+}
+
 .credits {
   padding: 0 10px;
   margin-top: 50px;
@@ -84,7 +88,7 @@ body {
 
 .hide {
   display: none !important;
-}
+} 
 
 #asaturday-ui .progress {
   font-size: 22px;
