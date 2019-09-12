@@ -39,4 +39,8 @@ router.get('/game/:id/', (req,res)=>{
 	res.render('oasis/'+ req.params.id)
 }) ;
 
+router.get('/logout/', (req, res)=>{
+	res.sendFile(views + '/logout.html')
+});
+
 module.exports = router ;
