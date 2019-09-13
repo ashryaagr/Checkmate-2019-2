@@ -18,8 +18,7 @@
     "score_increment" : 30,
     "score_decrement" : 15,
     "zone" : 1
-    },
-    "questions" : [{
+    }, {
     "question" : "1",
     "answer": "1",
     "score_increment" : 10,
@@ -38,8 +37,7 @@
     "score_increment" : 30,
     "score_decrement" : 15,
     "zone" : 2
-    },
-      "questions" : [{
+    },{
     "question" : "1",
     "answer": "1",
     "score_increment" : 10,
@@ -58,8 +56,7 @@
     "score_increment" : 30,
     "score_decrement" : 15,
     "zone" : 3
-    },
-        "questions" : [{
+    },{
     "question" : "1",
     "answer": "1",
     "score_increment" : 10,
@@ -78,7 +75,7 @@
     "score_increment" : 30,
     "score_decrement" : 15,
     "zone" : 4
-    },  "questions" : [{
+    },{
     "question" : "1",
     "answer": "1",
     "score_increment" : 10,
@@ -97,7 +94,7 @@
     "score_increment" : 30,
     "score_decrement" : 15,
     "zone" : 5
-    },  "questions" : [{
+    },{
     "question" : "1",
     "answer": "1",
     "score_increment" : 10,
