@@ -4,11 +4,138 @@ body {
   -webkit-text-size-adjust: 100%; /* Prevent font scaling in landscape while allowing user zoom */
 }
 
-iframe{
-  margin-top: 80px;
+
+.container {
+  width: 100%;
+  height: 50%;
+  margin-top: 2.5%;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  flex-direction: row;
 }
 
-.credits {
+.box{
+  width: 270px;
+  height: 300px;
+  box-shadow: 0px 0px 7px 3px gray;
+  text-align: center;
+  margin: 20px auto;
+}
+
+
+a, a:link, a:visited {
+  text-decoration: none;
+  padding: 9px 15px;
+  border: 1px solid #ececec;
+  border-radius: 5px;
+  color: gray;
+}
+
+.animate {
+	font-size: 40px;
+	margin: 50px 0 0;
+}
+
+.animate span {
+	display: inline-block;
+}
+
+
+.animate span:nth-of-type(2) {
+	animation-delay: .05s;
+}
+.animate span:nth-of-type(3) {
+	animation-delay: .1s;
+}
+.animate span:nth-of-type(4) {
+	animation-delay: .15s;
+}
+.animate span:nth-of-type(5) {
+	animation-delay: .2s;
+}
+.animate span:nth-of-type(6) {
+	animation-delay: .25s;
+}
+.animate span:nth-of-type(7) {
+	animation-delay: .3s;
+}
+.animate span:nth-of-type(8) {
+	animation-delay: .35s;
+}
+.animate span:nth-of-type(9) {
+	animation-delay: .4s;
+}
+.animate span:nth-of-type(10) {
+	animation-delay: .45s;
+}
+.animate span:nth-of-type(11) {
+	animation-delay: .5s;
+}
+.animate span:nth-of-type(12) {
+	animation-delay: .55s;
+}
+.animate span:nth-of-type(13) {
+	animation-delay: .6s;
+}
+.animate span:nth-of-type(14) {
+	animation-delay: .65s;
+}
+.animate span:nth-of-type(15) {
+	animation-delay: .7s;
+}
+.animate span:nth-of-type(16) {
+	animation-delay: .75s;
+}
+.animate span:nth-of-type(17) {
+	animation-delay: .8s;
+}
+.animate span:nth-of-type(18) {
+	animation-delay: .85s;
+}
+.animate span:nth-of-type(19) {
+	animation-delay: .9s;
+}
+.animate span:nth-of-type(20) {
+	animation-delay: .95s;
+}
+
+.three span {
+	color: #b10e81;
+	opacity: 0;
+	transform: translate(-300px, 0) scale(0);
+  animation: sideSlide 0.8s forwards;
+}
+
+@keyframes sideSlide {
+	60% {
+		transform: translate(20px, 0) scale(1);
+		color: #e2df1d;
+	}
+
+	80% {
+		transform: translate(20px, 0) scale(1);
+		color: #00f0ff;
+	}
+
+	99% {
+		transform: translate(0) scale(1.2);
+		color:  #b10e81;
+	}
+
+	100% {
+		transform: translate(0) scale(1);
+		opacity: 1;
+		color: #16c1ec;
+  }
+ }
+
+.developers{
+  margin-top: 10%;
+}
+
+ .credits {
   padding: 0 10px;
   margin-top: 50px;
   text-align: center;
@@ -26,6 +153,7 @@ iframe{
   border-radius: 13px;
   padding: 1.7em 2em;
 }
+
 
 #asaturday-ui {
   z-index: 100;
