@@ -32,14 +32,16 @@
   <body>
      <div class="instructions-overlay" id="instructions">
      <div class="instructions" class="hide">
-        <button class="start-button"><span>Loading...</span></button> 
+        <button id="start-button" class="start-button"><span>Loading...</span></button>
         <iframe src="https://giphy.com/embed/cj1qpZ3e1GU834D44B" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen> </iframe>
          <!-- <p>*THANK YOU FOR PLAYING CHECKMATE 2019*</p>
           <p>We hope to see you at our next event too!</p> -->
         
       </div> 
     </div> 
-    
+    <script>
+      $("#start-button").click()
+    </script>
       
 
     <div id="gif-ui" class="hide black">

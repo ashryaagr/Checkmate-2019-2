@@ -13,8 +13,10 @@ const resolvers = {
 		async info(_, args, context){
 			return await Team.findById(context.team._id)
 		},
-		async allQuestions(){
-			return Question.find()
+		async allQuestions(_, { zone }){
+			return Question.find({
+				zone : zone
+			})
 		}
 	},
 	Mutation: {

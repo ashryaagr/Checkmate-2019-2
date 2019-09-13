@@ -1,0 +1,1 @@
+// TODO: Remove the cookie and change the url to /logout

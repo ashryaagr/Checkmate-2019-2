@@ -18,7 +18,7 @@ const typeDefs = `
 	type Query{
 	    info : Team
 	    allTeams: [Team]
-	    allQuestions : [Question]
+	    allQuestions  ( zone : Int! ): [Question]
 	}
     input TeamInput{
         username : String!
