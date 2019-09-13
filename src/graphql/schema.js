@@ -29,7 +29,6 @@ const typeDefs = `
 	type Mutation{
 	    register (input : TeamInput ) : String
 	    login (username : String!, password : String!) : String
-	    logout : Int
 	}
 ` ;
 

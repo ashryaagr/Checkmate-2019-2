@@ -42,7 +42,7 @@ window.onload = $.ajax({
 				<p class="question-content">${question_array[i]["question"]}</p> <input type="text" class="form-control"
 					id=answer-${i} placeholder="answer">
 				</div>
-				<div class="modal-footer flex-center"> <a href="#" class="btn btn-info">Yes</a> <a type="button"
+				<div class="modal-footer flex-center"> <a type="button" class="btn btn-info">Yes</a> <a type="button"
 					class="btn btn-outline-info waves-effect" data-dismiss="modal">No</a> </div>
 			</div>
 			</div>

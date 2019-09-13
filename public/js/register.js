@@ -17,22 +17,25 @@ $("#submit").click(function (event) {
 		id_2: $("#id_2").val()
 	};
 	const body = {
-		"query": "mutation register( input : { " + JSON.stringify(details) + " })"
+		"query": "mutation { register( input : {" +
+			`username: "${$("#username").val()}",
+			password: "${$("#password").val()}",
+			id_1: "${$("#id_1").val()}",
+			id_2: "${$("#id_2").val()}"`
+			+ "}) }"
 	};
-
 	$.ajax({
 		url: "/graphql",
 		method: 'POST',
 		data: body,
-		success: function(jwt){
+		success: function(response){
+			const jwt = response["data"]["register"]
 			alert("Successfuly registered user") ;
 			setCookie("jwt", jwt, 1);
 			window.location.href = window.location.origin + "/game"
 		},
-		error : function () {
+		error : function (error) {
 			alert("Invalid data/username/ids") ;
-			document.getElementById("submit").disabled = false ;
-			$("#submit").val("Submit")
 		}
   	});
 	document.getElementById("submit").disable = false ;

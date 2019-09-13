@@ -19,11 +19,12 @@ function getCookie(cname) {
 
 
 buttons.forEach(button =>{
-	button.click = ()=> {
-		const questionNumber = button.parentElement.parentElement.questionNumber ; // TODO ; Add a parameter of question number to all the questions
-		const answer =button.parentElement.parentElement.children[1].children[2].value;
+	button.click = function(){
+		alert("button clicked")
+		const _id = buttons[0].parentElement.parentElement.parentElement.parentElement.getAttribute("_id")
+		const answer = button.parentElement.parentElement.children[1].children[2].value;
 		const body = {
-			questionNumber,
+			_id,
 			answer
 		};
 		const token = getCookie("jwt") ;

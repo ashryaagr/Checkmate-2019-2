@@ -35,13 +35,6 @@ const resolvers = {
 				else
 					return await team.generateAuthToken() ;
 			}
-		},
-		async logout(_, args , context){
-			if (!context.team) throw Error("You are not authenticated") ;
-			const team = await Team.findById(context.team._id) ;
-			team.tokens = [] ;
-			await team.save();
-			return 1;
 		}
 	}
 } ;

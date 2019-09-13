@@ -11,24 +11,22 @@ $("#submit").click(function (event) {
 	$("#submit").val('Verifying...') ;
 	$("#submit").attr('disabled','disabled');
 	const body = {
-		"query" : "mutation { "+
-		"login (username : \"" + $("#username").val() + "\", password : \""+ $("#password").val() + "\""+
-			" }"
+		"query" :
+			`mutation { login (username : "${$("#username").val()}",  password : "${$("#password").val()}" ) }`
 	};
 
 	$.ajax({
 		url: "/graphql",
 		method: 'POST',
 		data: body,
-		success: function(jwt){
+		success: function(reponse){
+			const jwt = reponse["data"]["login"]
 			alert("Successfuly logged in") ;
 			setCookie("jwt", jwt, 1);
 			window.location.href = window.location.origin + "/game"
 		},
 		error : function () {
 			alert("Invalid credentials")
-			document.getElementById("submit").disabled = false ;
-			$("#submit").val("Submit")
 		}
   	});
 	}

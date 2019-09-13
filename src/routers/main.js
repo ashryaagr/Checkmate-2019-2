@@ -1,6 +1,7 @@
 const express = require('express');
 const router = new express.Router();
 const path = require('path') ;
+const Team = require('../models/team')
 
 const views = path.join(__dirname, '../../public')  ;
 
@@ -39,8 +40,21 @@ router.get('/game/:id/', (req,res)=>{
 	res.render('oasis/'+ req.params.id)
 }) ;
 
-router.get('/logout/', (req, res)=>{
-	res.sendFile(views + '/logout.html')
+router.post('/logout/', async (req, res)=>{
+	const team = await Team.findById(req.user._id) ;
+	try {
+		team.tokens = team.tokens.filter((token) => token.token!==req.cookies.jwt) ;
+		team.save() ;
+		res.status(200).send()
+	} catch (e) {
+		res.status(500).send() ;
+	}
 });
+
+
+router.get('/logout/', (req, res)=>{
+	res.clearCookie('jwt') ;
+	res.sendFile(views + '/logout.html')
+}) ;
 
 module.exports = router ;
