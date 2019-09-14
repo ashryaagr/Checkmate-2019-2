@@ -1,4 +1,3 @@
-var buttons = document.getElementsByClassName("btn-info") ; // I am assuming that check answer buttons are under the class btn-info
 
 
 function getCookie(cname) {
@@ -17,30 +16,37 @@ function getCookie(cname) {
   return "";
 }
 
+$(document).ready(function() {
+	const buttons = document.getElementsByClassName("btn-info");
+	// I am assuming that check answer buttons are under the class btn-info
 
-buttons.forEach(button =>{
-	button.click = function(){
-		alert("button clicked")
-		const _id = buttons[0].parentElement.parentElement.parentElement.parentElement.getAttribute("_id")
-		const answer = button.parentElement.parentElement.children[1].children[2].value;
-		const body = {
-			_id,
-			answer
-		};
-		const token = getCookie("jwt") ;
-		$.ajax({
-			url: "/check_answer",
-			headers: {
-				'Authorization': `Bearer ${token}`,
-			},
-			method: 'POST',
-			data: body,
-			success: function(score){
-				alert("Question successfully answered. Your Score : " + score)
-			},
-			error : function () {
-				alert("Some error encountered. Please try again")
-			}
-		});
+	for (var i = 0; i < buttons.length; i++) {
+		buttons[i].addEventListener('click', function () {
+			const _id = this.parentElement.parentElement.parentElement.parentElement.getAttribute("_id")
+			const answer = this.parentElement.parentElement.children[1].children[2].value;
+			const body = {
+				_id,
+				answer
+			};
+
+			const token = getCookie("jwt");
+
+			$.ajax({
+				url: "/check_answer",
+				headers: {
+					'Authorization': `Bearer ${token}`,
+				},
+				method: 'POST',
+				data: body,
+				success: function (response) {
+					const score = response['score'];
+					alert("Question successfully answered. Your Score : " + score)
+				},
+				error: function (error) {
+					console.log(error);
+					alert("Some error encountered. Please try again")
+				}
+			});
+		})
 	}
-}) ;
+});

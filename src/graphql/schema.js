@@ -6,8 +6,6 @@ const typeDefs = `
 	type Team{
 	    username : String!
 	    score : Int!
-	    x_coordinate : Float!
-	    y_coordinate : Float!
 	}
 	type Question{
 	    _id : ID!

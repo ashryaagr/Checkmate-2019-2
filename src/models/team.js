@@ -37,14 +37,6 @@ const teamSchema = new mongoose.Schema({
 		type: Number,
 		default: 0
 	},
-	x_coordinate: {
-		type: Number,
-		default: 0.0
-	},
-	y_coordinate: {
-		type: Number,
-		default: 0.0
-	},
 	correctly_answered : [{
 		type: mongoose.Schema.Types.ObjectId,
 	}],
