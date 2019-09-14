@@ -22,7 +22,6 @@ $(document).ready(function() {
 
 	for (var i = 0; i < buttons.length; i++) {
 		buttons[i].addEventListener('click', function () {
-			console.log(this)
 			const _id = this.parentElement.parentElement.parentElement.parentElement.getAttribute("_id")
 			const answer = this.parentElement.parentElement.children[1].children[2].value;
 			const body = {
