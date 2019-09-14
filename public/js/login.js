@@ -21,9 +21,13 @@ $("#submit").click(function (event) {
 		data: body,
 		success: function(reponse){
 			const jwt = reponse["data"]["login"]
-			alert("Successfuly logged in") ;
-			setCookie("jwt", jwt, 1);
-			window.location.href = window.location.origin + "/game"
+			if (jwt!==null) {
+				alert("Successfuly logged in");
+				setCookie("jwt", jwt, 1);
+				window.location.href = window.location.origin + "/game"
+			} else {
+				alert("Invalid credentials")
+			}
 		},
 		error : function () {
 			alert("Invalid credentials")

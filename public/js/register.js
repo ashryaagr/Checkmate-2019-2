@@ -29,10 +29,14 @@ $("#submit").click(function (event) {
 		method: 'POST',
 		data: body,
 		success: function(response){
-			const jwt = response["data"]["register"]
-			alert("Successfuly registered user") ;
-			setCookie("jwt", jwt, 1);
-			window.location.href = window.location.origin + "/game"
+			const jwt = response["data"]["register"] ;
+			if (jwt!==null) {
+				alert("Successfuly registered user");
+				setCookie("jwt", jwt, 1);
+				window.location.href = window.location.origin + "/game"
+			}else {
+				alert("Invalid data/username/ids")
+			}
 		},
 		error : function (error) {
 			alert("Invalid data/username/ids") ;
