@@ -23,7 +23,7 @@ $(document).ready(function() {
 	for (var i = 0; i < buttons.length; i++) {
 		buttons[i].addEventListener('click', function () {
 			const _id = this.parentElement.parentElement.parentElement.parentElement.getAttribute("_id")
-			const answer = this.parentElement.parentElement.children[1].children[2].value;
+			const answer = this.parentElement.parentElement.children[1].children[3].value;
 			const body = {
 				_id,
 				answer
