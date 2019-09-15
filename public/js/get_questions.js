@@ -26,49 +26,76 @@ window.onload = $.ajax({
 		//     },]
 		// }
 
+		// ID'S OF ANSWERED QUESTIONS = ans
+
+		let ans = ['5d7b9f64dd14803f04249736']  //test value
+		let no_ques_ans = ans.length;
 		let question_array = response["data"]["allQuestions"];
 		let num = question_array.length;
 		let content = [];
-		for(let i=0;i<num;i++) {
-
-			let info = `
-			<div class="modal fade" _id=${question_array[i]["_id"]} id=modal-${i} tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-				<div class="modal-dialog modal-notify modal-info" role="document">
-					<div class="modal-content text-center">
-						<div class="modal-header d-flex justify-content-center">
-							<p class="heading">Question ${i+1}</p>
-						</div>
-						<div class="modal-body"> 
-							<div class="row">
-								<div class="col-xs-4">
-									<i class="fa fa-check fa-5x" aria-hidden="true"></i>
-								</div>	
-								<div class="col-xs-4">	
-									<i class="fa fa-question-circle" aria-hidden="true"></i>
-								</div>	
-								<div class="col-xs-4" >	
-									<i class="fa fa-times fa-5x" aria-hidden="true"></i>
-								</div>
+		let no_ques_not_ans = num - no_ques_ans;
+		let info;
+		for(let i=0;i<no_ques_not_ans && i<num;i++) {
+			if(ans.find((val) => {
+				return val == `${question_array[i]["_id"]}`;
+			}))
+			{
+				info = `
+				<div class="modal fade" _id=${question_array[i]["_id"]} id=modal-${i} tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+					<div class="modal-dialog modal-notify modal-info" role="document">
+						<div class="modal-content text-center">
+							<div class="modal-header d-flex justify-content-center">
+								<p class="heading">Question ${i+1}</p>
 							</div>
-							<div class="row">
-								<div class="col-xs-4" style="font-size:20px;">
-									+${question_array[i]["score_increment"]}	
-								</div>
-								<div class="col-xs-4 mt-5">
-								</div>
-								<div class="col-xs-4 mt-5" style="font-size:20px;">
-									-${question_array[i]["score_decrement"]}
-								</div>
+							<div class="modal-body"> 
+								<p class="question-content" style="font-size:16px;">QUESTION ALREADY ANSWERED!</p> 
 							</div>
-							<p class="question-content" style="font-size:16px;">${question_array[i]["question"]}</p> <input type="text" class="form-control" id=answer-${i} placeholder="answer">
-						</div>
-						<div class="modal-footer flex-center"> 
-							<a type="button" class="btn btn-info">Yes</a> <a type="button" class="btn btn-outline-info waves-effect" data-dismiss="modal">No</a> 
+							<div class="modal-footer flex-center"> 
+								<a type="button" class="btn btn-outline-info waves-effect" data-dismiss="modal">close</a> 
+							</div>
 						</div>
 					</div>
-				</div>
-			</div> `
-
+				</div> `
+			}
+			else {
+				info = `
+					<div class="modal fade" _id=${question_array[i]["_id"]} id=modal-${i} tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+						<div class="modal-dialog modal-notify modal-info" role="document">
+							<div class="modal-content text-center">
+								<div class="modal-header d-flex justify-content-center">
+									<p class="heading">Question ${i+1}</p>
+								</div>
+								<div class="modal-body"> 
+									<div class="row">
+										<div class="col-xs-4">
+											<i class="fa fa-check fa-5x" aria-hidden="true"></i>
+										</div>	
+										<div class="col-xs-4">	
+											<i class="fa fa-question-circle" aria-hidden="true"></i>
+										</div>	
+										<div class="col-xs-4" >	
+											<i class="fa fa-times fa-5x" aria-hidden="true"></i>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-xs-4" style="font-size:20px;">
+											+${question_array[i]["score_increment"]}	
+										</div>
+										<div class="col-xs-4 mt-5">
+										</div>
+										<div class="col-xs-4 mt-5" style="font-size:20px;">
+											-${question_array[i]["score_decrement"]}
+										</div>
+									</div>
+									<p class="question-content" style="font-size:16px;">${question_array[i]["question"]}</p> <input type="text" class="form-control" id=answer-${i} placeholder="answer">
+								</div>
+								<div class="modal-footer flex-center"> 
+									<a type="button" class="btn btn-info">Yes</a> <a type="button" class="btn btn-outline-info waves-effect" data-dismiss="modal">No</a> 
+								</div>
+							</div>
+						</div>
+					</div> `
+			}
 			content.push(info);
 		}
 
@@ -76,6 +103,7 @@ window.onload = $.ajax({
 		{
 			$("body").append(content[i]);
 		}
+
 
 	},
 	error : function () {
