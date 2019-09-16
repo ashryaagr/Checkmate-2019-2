@@ -32,43 +32,46 @@ function getCookie(cname) {
 
 const token = getCookie("jwt");
 
-window.onload = $.ajax({
-	url: "/graphql",
-	headers: {
-		'Authorization': `Bearer ${token}`,
-	},
-	method: 'POST',
-	data: body,
-	success: function(response){
-		// TODO: Write down Rohit's code here
-				// response = {
-		//     allQuestions : [{
-		//         _id: "727272hdhdud",
-		//         question: "what is yr name",
-		//         score_increment: 100,
-		//         score_decrement: 20,
-		//     },]
-		// }
+if (token===""){
+	alert("Please login before accessing the game")
+} else {
 
-		// ID'S OF ANSWERED QUESTIONS = ans
+	window.onload = $.ajax({
+		url: "/graphql",
+		headers: {
+			'Authorization': `Bearer ${token}`,
+		},
+		method: 'POST',
+		data: body,
+		success: function (response) {
+			// TODO: Write down Rohit's code here
+			// response = {
+			//     allQuestions : [{
+			//         _id: "727272hdhdud",
+			//         question: "what is yr name",
+			//         score_increment: 100,
+			//         score_decrement: 20,
+			//     },]
+			// }
 
-		let ans = response["data"]["info"]["correctly_answered"] ;
-		console.log(ans)
-		let question_array = response["data"]["allQuestions"];
-		let num = question_array.length;
-		let content = [];
-		let info;
-		for(let i=0; i<num;i++) {
-			if(ans.find((val) => {
-				return val === `${question_array[i]["_id"]}`;
-			}))
-			{
-				info = `
+			// ID'S OF ANSWERED QUESTIONS = ans
+
+			let ans = response["data"]["info"]["correctly_answered"];
+			console.log(ans)
+			let question_array = response["data"]["allQuestions"];
+			let num = question_array.length;
+			let content = [];
+			let info;
+			for (let i = 0; i < num; i++) {
+				if (ans.find((val) => {
+					return val === `${question_array[i]["_id"]}`;
+				})) {
+					info = `
 				<div class="modal fade" _id=${question_array[i]["_id"]} id=modal-${i} tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 					<div class="modal-dialog modal-notify modal-info" role="document">
 						<div class="modal-content text-center">
 							<div class="modal-header d-flex justify-content-center">
-								<p class="heading">Question ${i+1}</p>
+								<p class="heading">Question ${i + 1}</p>
 							</div>
 							<div class="modal-body"> 
 								<p class="question-content" style="font-size:16px;">QUESTION ALREADY ANSWERED!</p> 
@@ -79,14 +82,13 @@ window.onload = $.ajax({
 						</div>
 					</div>
 				</div> `
-			}
-			else {
-				info = `
+				} else {
+					info = `
 					<div class="modal fade" _id=${question_array[i]["_id"]} id=modal-${i} tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 						<div class="modal-dialog modal-notify modal-info" role="document">
 							<div class="modal-content text-center">
 								<div class="modal-header d-flex justify-content-center">
-									<p class="heading">Question ${i+1}</p>
+									<p class="heading">Question ${i + 1}</p>
 								</div>
 								<div class="modal-body"> 
 									<div class="row">
@@ -118,19 +120,19 @@ window.onload = $.ajax({
 							</div>
 						</div>
 					</div> `
+				}
+				content.push(info);
 			}
-			content.push(info);
+
+			for (let i = 0; i < num; i++) {
+				$("body").append(content[i]);
+			}
+
+
+		},
+		error: function (error) {
+			console.log(error)
+			alert("Some problem encountered. Can't fetch questions")
 		}
-
-		for(let i=0;i<num;i++)
-		{
-			$("body").append(content[i]);
-		}
-
-
-	},
-	error : function (error) {
-		console.log(error)
-		alert("Some problem encountered. Can't fetch questions")
-	}
-});
+	});
+}

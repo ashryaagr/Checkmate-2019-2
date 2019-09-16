@@ -18,20 +18,23 @@ $("#logout").click(function(event){
 	event.preventDefault() ;
 
 	const token = getCookie("jwt") ;
-	console.log(token)
-	$.ajax({
-		url: "/logout",
-		headers: {
-			'Authorization': `Bearer ${token}`,
-		},
-		method: 'POST',
-		data: body,
-		success: function(){
-			alert("Successfuly logged out") ;
-			window.location.href = window.location.origin + "/logout"
-		},
-		error : function (error) {
-			alert("Unauthorised")
-		}
-  	});
+	if (token===""){
+		alert("How can you logout when you are not event logged in ?")
+	} else {
+		$.ajax({
+			url: "/logout",
+			headers: {
+				'Authorization': `Bearer ${token}`,
+			},
+			method: 'POST',
+			data: body,
+			success: function () {
+				alert("Successfuly logged out");
+				window.location.href = window.location.origin + "/logout"
+			},
+			error: function (error) {
+				alert("Unauthorised")
+			}
+		});
+	}
 } );
