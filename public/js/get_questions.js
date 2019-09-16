@@ -1,18 +1,42 @@
 const zone_number = parseInt(window.location.href.split('/')[4])
 
 const body = {
-	"query" : "    query {\n" +
-		"      allQuestions( zone : "+ zone_number + ") {\n" +
-		"        _id\n" +
-		"        question\n" +
-		"        score_increment\n" +
-		"        score_decrement\n" +
-		"      }\n" +
-		"    }"
+	"query" : `query {
+		     allQuestions( zone : ${zone_number}) {
+		        _id
+		        question
+		        score_increment
+		        score_decrement
+		     }
+		     info {
+		     	correctly_answered
+		     }
+		    }`
 } ;
+
+function getCookie(cname) {
+  var name = cname + "=";
+  var decodedCookie = decodeURIComponent(document.cookie);
+  var ca = decodedCookie.split(';');
+  for(var i = 0; i <ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
+const token = getCookie("jwt");
 
 window.onload = $.ajax({
 	url: "/graphql",
+	headers: {
+		'Authorization': `Bearer ${token}`,
+	},
 	method: 'POST',
 	data: body,
 	success: function(response){
@@ -28,7 +52,7 @@ window.onload = $.ajax({
 
 		// ID'S OF ANSWERED QUESTIONS = ans
 
-		let ans = ['5d7b9f64dd14803f04249736']  //test value
+		let ans = response["data"]["info"]["correctly_answered"] ;
 		let no_ques_ans = ans.length;
 		let question_array = response["data"]["allQuestions"];
 		let num = question_array.length;
@@ -37,7 +61,7 @@ window.onload = $.ajax({
 		let info;
 		for(let i=0;i<no_ques_not_ans && i<num;i++) {
 			if(ans.find((val) => {
-				return val == `${question_array[i]["_id"]}`;
+				return val === `${question_array[i]["_id"]}`;
 			}))
 			{
 				info = `
@@ -106,7 +130,8 @@ window.onload = $.ajax({
 
 
 	},
-	error : function () {
+	error : function (error) {
+		console.log(error)
 		alert("Some problem encountered. Can't fetch questions")
 	}
 });

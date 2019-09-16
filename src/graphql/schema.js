@@ -6,6 +6,7 @@ const typeDefs = `
 	type Team{
 	    username : String!
 	    score : Int!
+	    correctly_answered : [ID]
 	}
 	type Question{
 	    _id : ID!
