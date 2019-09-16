@@ -40,7 +40,14 @@ $(document).ready(function() {
 				data: body,
 				success: function (response) {
 					const score = response['score'];
-					alert("Question successfully answered. Your Score : " + score)
+					const flag = response['flag'];
+					if (flag ===1){
+						alert(`Phoda!! Correct Answer.. Your Score : ${score}`)
+					} else if (flag ===0){
+						alert(`Question already answered. Your Score : ${score}`)
+					} else if (flag === -1){
+						alert(`Incorrect Answer. Your Score : ${score}`)
+					}
 				},
 				error: function (error) {
 					console.log(error);
