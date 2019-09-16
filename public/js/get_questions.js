@@ -53,13 +53,12 @@ window.onload = $.ajax({
 		// ID'S OF ANSWERED QUESTIONS = ans
 
 		let ans = response["data"]["info"]["correctly_answered"] ;
-		let no_ques_ans = ans.length;
+		console.log(ans)
 		let question_array = response["data"]["allQuestions"];
 		let num = question_array.length;
 		let content = [];
-		let no_ques_not_ans = num - no_ques_ans;
 		let info;
-		for(let i=0;i<no_ques_not_ans && i<num;i++) {
+		for(let i=0; i<num;i++) {
 			if(ans.find((val) => {
 				return val === `${question_array[i]["_id"]}`;
 			}))
