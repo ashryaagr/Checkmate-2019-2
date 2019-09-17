@@ -15,8 +15,8 @@ function getCookie(cname) {
   }
   return "";
 }
-
-$(document).ready(function() {
+// Tried document load , but it didn't work as expected
+$(window).on("load", function() {
 	const buttons = document.getElementsByClassName("btn-info");
 	// I am assuming that check answer buttons are under the class btn-info
 
