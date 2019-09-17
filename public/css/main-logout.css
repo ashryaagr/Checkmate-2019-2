@@ -8,12 +8,14 @@ body {
   position: absolute;
   top: 51%;
   left: 42%;
-  background: linear-gradient(to right,#fff 20%, rgb(0, 204, 255) 40%, rgb(0, 225, 255) 60%, #fff 80%);
+  text-decoration: underline;
+  color: #ffd;
+  /* background: linear-gradient(to right,#fff 20%, rgb(166, 77, 226) 40%, rgb(0, 225, 255) 60%, #fff 80%);
   -webkit-background-clip: text;
   background-clip: text;
   background-size: 50% auto;
   -webkit-text-fill-color: transparent;
-  animation: grad 1s linear infinite;
+  animation: grad 1s linear infinite; */
 }
 
 .container {
@@ -29,11 +31,11 @@ body {
   flex-direction: row;
 }
 
-@keyframes grad{
+/* @keyframes grad{
   to {
     background-position: 100% center;
   }
-}
+} */
 
 .box{
   width: 270px;
@@ -304,7 +306,7 @@ a, a:link, a:visited {
   width: 100%;
   height: 100%;
   background-color: black;
-  background: url(../assets/img/profiles/logout-bg.jpeg);
+  background: url(../assets/bg.jpg);
   background-size: cover;
 }
 
@@ -349,7 +351,7 @@ a, a:link, a:visited {
 }
 
 .instructions .start-button {
-  background: linear-gradient(to right,rgb(32, 45, 216) 20%,rgb(45, 106, 219) 40%, rgb(0, 156, 218) 60%, rgb(0, 225, 255) 80%);
+  background: linear-gradient(to right,rgb(179, 32, 216) 20%,rgb(213, 45, 219) 40%, rgb(218, 0, 134) 60%, rgb(221, 57, 172) 80%);
   color: #fff;
   cursor: pointer;
   font-size: 22px;
