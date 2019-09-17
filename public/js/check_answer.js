@@ -49,6 +49,8 @@ $(window).on("load", function() {
 							alert(`Question already answered. Your Score : ${score}`)
 						} else if (flag === -1) {
 							alert(`Incorrect Answer. Your Score : ${score}`)
+						} else if (flag === 2 ){
+							alert(`Enter some answer before submitting. Your Score : ${score}`)
 						}
 					},
 					error: function (error) {
