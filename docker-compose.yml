@@ -1,7 +1,7 @@
 version: '3'
 services:
   node_server:
-    build: ./checkmate
+    build: ./
     restart: always
     ports:
       - 3000:3000
@@ -12,10 +12,21 @@ services:
     env_file:
       - config/production.env
   mongo:
-    mongo:
-        container_name: mongo
-        image: mongo
-        expose:
-          - 27017
-        ports:
-          - "27017:27017"
+    container_name: mongo
+    image: mongo
+    expose:
+      - 27017
+    ports:
+      - 27017:27017
+  nginx:
+    container_name: nginx
+    image: nginx
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+    restart: always
+    expose:
+      - 80
+    links:
+      - node_server
+    ports:
+      - 80:80

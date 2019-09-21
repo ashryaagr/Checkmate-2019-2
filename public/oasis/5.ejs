@@ -11,87 +11,7 @@ function gtag() {
 gtag('js', new Date());
 gtag('config', 'UA-111391431-8'); </script>
 <body>
-<div aria-hidden="true" aria-labelledby="exampleModalLabel" class="modal fade" id="modal-0" role="dialog" tabindex="-1">
-    <div class="modal-dialog modal-notify modal-info" role="document">
-        <div class="modal-content text-center">
-            <div class="modal-header d-flex justify-content-center"><p class="heading">Question 1</p></div>
-            <div class="modal-body"><i aria-hidden="true" class="fa fa-question-circle"></i>
-                <p class="question-content">What is the answer to this question?</p> <input class="form-control"
-                                                                                            id="answer-0"
-                                                                                            placeholder="answer"
-                                                                                            type="text"></div>
-            <div class="modal-footer flex-center"><a class="btn btn-info" href="#">Yes</a> <a class="btn btn-outline-info waves-effect"
-                                                                                              data-dismiss="modal"
-                                                                                              type="button">No</a>
-            </div>
-        </div>
-    </div>
-</div>
-<div aria-hidden="true" aria-labelledby="exampleModalLabel" class="modal fade" id="modal-1" role="dialog" tabindex="-1">
-    <div class="modal-dialog modal-notify modal-info" role="document">
-        <div class="modal-content text-center">
-            <div class="modal-header d-flex justify-content-center"><p class="heading">Question 2</p></div>
-            <div class="modal-body"><i aria-hidden="true" class="fa fa-question-circle"></i>
-                <p class="question-content">What is the answer to this question?</p> <input class="form-control"
-                                                                                            id="answer-1"
-                                                                                            placeholder="answer"
-                                                                                            type="text"></div>
-            <div class="modal-footer flex-center"><a class="btn btn-info" href="#">Yes</a> <a class="btn btn-outline-info waves-effect"
-                                                                                              data-dismiss="modal"
-                                                                                              type="button">No</a>
-            </div>
-        </div>
-    </div>
-</div>
-<div aria-hidden="true" aria-labelledby="exampleModalLabel" class="modal fade" id="modal-2" role="dialog" tabindex="-1">
-    <div class="modal-dialog modal-notify modal-info" role="document">
-        <div class="modal-content text-center">
-            <div class="modal-header d-flex justify-content-center"><p class="heading">Question 3</p></div>
-            <div class="modal-body"><i aria-hidden="true" class="fa fa-question-circle"></i>
-                <p class="question-content">What is the answer to this question?</p> <input class="form-control"
-                                                                                            id="answer-2"
-                                                                                            placeholder="answer"
-                                                                                            type="text"></div>
-            <div class="modal-footer flex-center"><a class="btn btn-info" href="#">Yes</a> <a class="btn btn-outline-info waves-effect"
-                                                                                              data-dismiss="modal"
-                                                                                              type="button">No</a>
-            </div>
-        </div>
-    </div>
-</div>
-<div aria-hidden="true" aria-labelledby="exampleModalLabel" class="modal fade" id="modal-3" role="dialog" tabindex="-1">
-    <div class="modal-dialog modal-notify modal-info" role="document">
-        <div class="modal-content text-center">
-            <div class="modal-header d-flex justify-content-center"><p class="heading">Question 4</p></div>
-            <div class="modal-body"><i aria-hidden="true" class="fa fa-question-circle"></i>
-                <p class="question-content">What is the answer to this question?</p> <input class="form-control"
-                                                                                            id="answer-3"
-                                                                                            placeholder="answer"
-                                                                                            type="text"></div>
-            <div class="modal-footer flex-center"><a class="btn btn-info" href="#">Yes</a> <a class="btn btn-outline-info waves-effect"
-                                                                                              data-dismiss="modal"
-                                                                                              type="button">No</a>
-            </div>
-        </div>
-    </div>
-</div>
-<div aria-hidden="true" aria-labelledby="exampleModalLabel" class="modal fade" id="modal-4" role="dialog" tabindex="-1">
-    <div class="modal-dialog modal-notify modal-info" role="document">
-        <div class="modal-content text-center">
-            <div class="modal-header d-flex justify-content-center"><p class="heading">Question 5</p></div>
-            <div class="modal-body"><i aria-hidden="true" class="fa fa-question-circle"></i>
-                <p class="question-content">What is the answer to this question?</p> <input class="form-control"
-                                                                                            id="answer-4"
-                                                                                            placeholder="answer"
-                                                                                            type="text"></div>
-            <div class="modal-footer flex-center"><a class="btn btn-info" href="#">Yes</a> <a class="btn btn-outline-info waves-effect"
-                                                                                              data-dismiss="modal"
-                                                                                              type="button">No</a>
-            </div>
-        </div>
-    </div>
-</div>
-
+    
 <%- include ../partials/leaderboard.html %>
 
 <a-scene cursor="rayOrigin: mouse" data-is-home="false" debug-controller="enabled: true"
@@ -155,7 +75,7 @@ gtag('config', 'UA-111391431-8'); </script>
     </a-entity>
     <a-entity id="portals" mixin="hoverAnimation">
         <a-entity class="portal" material="pano: ../assets/img/portal/forest.jpg" mixin="portal"
-                  oasis-portal="href: ../game/3" position="6 0 -13">
+                  oasis-portal="href: /game/3" position="6 0 -13">
             <a-entity additive animation="property: object3D.rotation.x; from: 0; to: 6.283185; dur: 10000; loop: true; easing: linear" class="portalEffect1"
                       material="color: #03c1e2; opacity: 0.6; depthWrite: false; shader: flat; transparent: true; src: #portalImg"
                       obj-model="obj: ../assets/models/portal/portal.obj" position="0 0 -0.017" rotation="0 90 90"
@@ -169,7 +89,7 @@ gtag('config', 'UA-111391431-8'); </script>
                       text="color: #4ef580; align: center; value: EARTH; side: double; width: 4; zOffset: 0.01"></a-entity>
         </a-entity>
         <a-entity class="portal" material="pano: ../assets/img/portal/volcano.jpg" mixin="portal"
-                  oasis-portal="href: ../game/4" position="-8 0 -17">
+                  oasis-portal="href: /game/4" position="-8 0 -17">
             <a-entity additive animation="property: object3D.rotation.x; from: 0; to: 6.283185; dur: 10000; loop: true; easing: linear" class="portalEffect1"
                       material="color: #03c1e2; opacity: 0.6; depthWrite: false; shader: flat; transparent: true; src: #portalImg"
                       obj-model="obj: ../assets/models/portal/portal.obj" position="0 0 -0.017" rotation="0 90 90"
@@ -183,7 +103,7 @@ gtag('config', 'UA-111391431-8'); </script>
                       text="color: #4ef580; align: center; value: VORMIR; side: double; width: 4; zOffset: 0.01"></a-entity>
         </a-entity>
         <a-entity class="portal" material="pano: ../assets/img/portal/arches.jpg" mixin="portal"
-                  oasis-portal="href: ../game/1" position="-4 0 -15">
+                  oasis-portal="href: /game/1" position="-4 0 -15">
             <a-entity additive animation="property: object3D.rotation.x; from: 0; to: 6.283185; dur: 10000; loop: true; easing: linear" class="portalEffect1"
                       material="color: #03c1e2; opacity: 0.6; depthWrite: false; shader: flat; transparent: true; src: #portalImg"
                       obj-model="obj: ../assets/models/portal/portal.obj" position="0 0 -0.017" rotation="0 90 90"
@@ -197,7 +117,7 @@ gtag('config', 'UA-111391431-8'); </script>
                       text="color: #4ef580; align: center; value: ZEN-WHOBERI; side: double; width: 4; zOffset: 0.01"></a-entity>
         </a-entity>
         <a-entity class="portal" material="pano: ../assets/img/portal/japan.jpg" mixin="portal"
-                  oasis-portal="href: ../game/2" position="-1 0 -20">
+                  oasis-portal="href: /game/2" position="-1 0 -20">
             <a-entity additive animation="property: object3D.rotation.x; from: 0; to: 6.283185; dur: 10000; loop: true; easing: linear" class="portalEffect1"
                       material="color: #03c1e2; opacity: 0.6; depthWrite: false; shader: flat; transparent: true; src: #portalImg"
                       obj-model="obj: ../assets/models/portal/portal.obj" position="0 0 -0.017" rotation="0 90 90"
@@ -211,7 +131,7 @@ gtag('config', 'UA-111391431-8'); </script>
                       text="color: #4ef580; align: center; value: TITAN; side: double; width: 4; zOffset: 0.01"></a-entity>
         </a-entity>
         <a-entity class="portal" material="pano: ../assets/img/portal/egypt.jpg" mixin="portal"
-                  oasis-portal="href: ../game/6" position="2  0 -10">
+                  oasis-portal="href: /game/6" position="2  0 -10">
             <a-entity additive animation="property: object3D.rotation.x; from: 0; to: 6.283185; dur: 10000; loop: true; easing: linear" class="portalEffect1"
                       material="color: #03c1e2; opacity: 0.6; depthWrite: false; shader: flat; transparent: true; src: #portalImg"
                       obj-model="obj: ../assets/models/portal/portal.obj" position="0 0 -0.017" rotation="0 90 90"
@@ -225,7 +145,7 @@ gtag('config', 'UA-111391431-8'); </script>
                       text="color: #4ef580; align: center; value: NIDAVELLIR; side: double; width: 4; zOffset: 0.01"></a-entity>
         </a-entity>
         <a-entity class="portal" material="pano: ../assets/img/portal/tron.jpg" mixin="portal"
-                  oasis-portal="href: ../game/ ; isHomePortal: true" position="-5 0 5">
+                  oasis-portal="href: /game ; isHomePortal: true" position="-5 0 5">
             <a-entity additive animation="property: object3D.rotation.x; from: 0; to: 6.283185; dur: 10000; loop: true; easing: linear" class="portalEffect1"
                       material="color: #03c1e2; opacity: 0.6; depthWrite: false; shader: flat; transparent: true; src: #portalImg"
                       obj-model="obj: ../assets/models/portal/portal.obj" position="0 0 -0.017" rotation="0 90 90"
@@ -289,27 +209,8 @@ gtag('config', 'UA-111391431-8'); </script>
                       rotation="0 0 0" scale="0.3 0.3 0.3" text="color: #4ef580; align: center; value: QUESTION\n3; side: double; width: 1; xOffset: 0.02; zOffset: 0.1"></a-entity>
         </a-entity>
     </a-entity>
-    <a-entity>
-        <a-entity class="question-board" id="question-3" obj-model="obj: ../assets/models/question_board/question_board.obj; mtl: ../assets/models/question_board/materials.mtl "
-                  pop-up-question="q_no: 4"
-                  position="16 3 -15" rotation="0 -30 0" scale="25 25 25">
-            <a-entity class="portalText"
-                      position="0 0 0"
-                      rotation="0 0 0" scale="0.3 0.3 0.3" text="color: #4ef580; align: center; value: QUESTION\n4; side: double; width: 1; xOffset: 0.02; zOffset: 0.1"></a-entity>
-        </a-entity>
-    </a-entity>
-    <a-entity>
-        <a-entity class="question-board" id="question-4" obj-model="obj: ../assets/models/question_board/question_board.obj; mtl: ../assets/models/question_board/materials.mtl "
-                  pop-up-question="q_no: 5"
-                  position="5 3 -25" rotation="0 -30 0" scale="25 25 25">
-            <a-entity class="portalText"
-                      position="0 0 0"
-                      rotation="0 0 0" scale="0.3 0.3 0.3" text="color: #4ef580; align: center; value: QUESTION\n5; side: double; width: 1; xOffset: 0.02; zOffset: 0.1"></a-entity>
-        </a-entity>
-    </a-entity>
     <a-entity cursor="rayOrigin: mouse" debug-cursor id="mouseCursor"
               raycaster="objects: [raycastable]; recursive: false"></a-entity>
-    raycaster
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111391431-8"></script>
     <script></script>
 </a-scene>

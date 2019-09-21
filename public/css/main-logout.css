@@ -4,7 +4,194 @@ body {
   -webkit-text-size-adjust: 100%; /* Prevent font scaling in landscape while allowing user zoom */
 }
 
-.credits {
+.developers h1{
+  position: absolute;
+  top: 51%;
+  left: 42%;
+  text-decoration: underline;
+  color: #ffd;
+  /* background: linear-gradient(to right,#fff 20%, rgb(166, 77, 226) 40%, rgb(0, 225, 255) 60%, #fff 80%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-size: 50% auto;
+  -webkit-text-fill-color: transparent;
+  animation: grad 1s linear infinite; */
+}
+
+.container {
+  width: 100%;
+  height: 50%;
+  margin-top: 16%;
+  padding: 3px;
+  position: relative;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+/* @keyframes grad{
+  to {
+    background-position: 100% center;
+  }
+} */
+
+.box{
+  width: 270px;
+  height: 250px;
+  /* background-color: rgb(31, 27, 27); */
+  border-radius: 15px;
+  position: relative;
+  display: flex;
+  box-shadow: 0px 0px 7px 3px gray;
+  margin: 20px auto;
+  margin-top: 5%;
+}
+
+.name{
+  position: absolute;
+  left:18%;
+  top: 55%;
+  padding: 0%;
+  font-size: 25px;
+}
+
+.box-sub{
+  width: 140px;
+  height: 145px;
+  border-radius: 20px;
+  overflow: hidden;
+  position: absolute;
+  box-shadow: 0px 0px 7px 3px gray;
+  left: 25%;
+  top: -40px;
+  padding: 0%;
+}
+
+.dash{
+    width: 28%;
+    height: 2px;
+    background-color: #e5e6ec;
+    position: absolute;
+    top: 80%;
+    left: 35%;
+}
+
+a, a:link, a:visited {
+  text-decoration: none;
+  padding: 9px 15px;
+  border: 1px solid #ececec;
+  border-radius: 5px;
+  color: gray;
+  text-align: center;
+}
+
+.animate {
+  font-size: 40px;
+  text-align: center;  
+	margin: 60px 0 0;
+}
+
+.animate span {
+	display: inline-block;
+}
+
+
+.animate span:nth-of-type(2) {
+	animation-delay: .05s;
+}
+.animate span:nth-of-type(3) {
+	animation-delay: .1s;
+}
+.animate span:nth-of-type(4) {
+	animation-delay: .15s;
+}
+.animate span:nth-of-type(5) {
+	animation-delay: .2s;
+}
+.animate span:nth-of-type(6) {
+	animation-delay: .25s;
+}
+.animate span:nth-of-type(7) {
+	animation-delay: .3s;
+}
+.animate span:nth-of-type(8) {
+	animation-delay: .35s;
+}
+.animate span:nth-of-type(9) {
+	animation-delay: .4s;
+}
+.animate span:nth-of-type(10) {
+	animation-delay: .45s;
+}
+.animate span:nth-of-type(11) {
+	animation-delay: .5s;
+}
+.animate span:nth-of-type(12) {
+	animation-delay: .55s;
+}
+.animate span:nth-of-type(13) {
+	animation-delay: .6s;
+}
+.animate span:nth-of-type(14) {
+	animation-delay: .65s;
+}
+.animate span:nth-of-type(15) {
+	animation-delay: .7s;
+}
+.animate span:nth-of-type(16) {
+	animation-delay: .75s;
+}
+.animate span:nth-of-type(17) {
+	animation-delay: .8s;
+}
+.animate span:nth-of-type(18) {
+	animation-delay: .85s;
+}
+.animate span:nth-of-type(19) {
+	animation-delay: .9s;
+}
+.animate span:nth-of-type(20) {
+	animation-delay: .95s;
+}
+
+.three span {
+  color: #b10e81;
+  text-align: center;
+	opacity: 0;
+	transform: translate(-300px, 0) scale(0);
+  animation: sideSlide 0.8s forwards;
+}
+
+@keyframes sideSlide {
+	60% {
+		transform: translate(20px, 0) scale(1);
+		color: #e2df1d;
+	}
+
+	80% {
+		transform: translate(20px, 0) scale(1);
+		color: #00f0ff;
+	}
+
+	99% {
+		transform: translate(0) scale(1.2);
+		color:  #b10e81;
+	}
+
+	100% {
+		transform: translate(0) scale(1);
+		opacity: 1;
+		color: #16c1ec;
+  }
+ }
+
+.developers{
+  margin-top: 10%;
+}
+
+ .credits {
   padding: 0 10px;
   margin-top: 50px;
   text-align: center;
@@ -19,9 +206,10 @@ body {
   font-family: Helvetica, Arial, sans-serif;
   line-height: 1.2em;
   background-color: rgba(10,10,10,0.8);
-  border-radius: 13px;
+  border-radius: 13px;style="position:absolute; left: 35%;"
   padding: 1.7em 2em;
 }
+
 
 #asaturday-ui {
   z-index: 100;
@@ -84,7 +272,7 @@ body {
 
 .hide {
   display: none !important;
-}
+} 
 
 #asaturday-ui .progress {
   font-size: 22px;
@@ -108,7 +296,6 @@ body {
   color: #ffd;
   font-family: Helvetica, Arial, sans-serif;
   line-height: 1.8em;
-  text-align: center;
   width: 100%;
   opacity: 0;
   animation: fadein 0.5s;
@@ -131,7 +318,7 @@ body {
 .instructions img {
   padding-top: 20px;
   max-width: 100%;
-  max-height: 20%;
+  max-height: 100%;
 }
 
 .instructions h2 {
@@ -164,14 +351,14 @@ body {
 }
 
 .instructions .start-button {
-  background-color: #e43b5e;
+  background: linear-gradient(to right,rgb(179, 32, 216) 20%,rgb(213, 45, 219) 40%, rgb(218, 0, 134) 60%, rgb(221, 57, 172) 80%);
   color: #fff;
   cursor: pointer;
   font-size: 22px;
   width: 200px;
   height: 50px;
   margin-left: calc(50% - 100px);
-  margin-top: 50px;
+  margin-top: 80px;
   border-radius: 17px;
   border: none;
   display: block;

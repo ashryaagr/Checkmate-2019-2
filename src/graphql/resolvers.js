@@ -6,15 +6,17 @@ const bcrypt = require('bcryptjs');
 const resolvers = {
 	Query: {
 		async allTeams(){
-			return Team.find().sort({
+			return Team.find().select("username score").sort({
 				score: -1 // Sort in Descending order
-			}) // .slice(0, 10) can be used if we want to limit the number of people we would display on leaderboard
+			}).limit(10)
 		},
 		async info(_, args, context){
 			return await Team.findById(context.team._id)
 		},
-		async allQuestions(){
-			return Question.find()
+		async allQuestions(_, { zone }){
+			return Question.find({
+				zone : zone
+			}).select("-answer")
 		}
 	},
 	Mutation: {
@@ -33,13 +35,6 @@ const resolvers = {
 				else
 					return await team.generateAuthToken() ;
 			}
-		},
-		async logout(_, args , context){
-			if (!context.team) throw Error("You are not authenticated") ;
-			const team = await Team.findById(context.team._id) ;
-			team.tokens = [] ;
-			await team.save();
-			return 1;
 		}
 	}
 } ;

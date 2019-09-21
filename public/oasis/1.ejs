@@ -13,88 +13,9 @@
  </script>
 
  <body>
-   <div class="modal fade" id="modal-0" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-     aria-hidden="true">
-     <div class="modal-dialog modal-notify modal-info" role="document">
-       <div class="modal-content text-center">
-         <div class="modal-header d-flex justify-content-center">
-           <p class="heading">Question 1</p>
-         </div>
-         <div class="modal-body"> <i class="fa fa-question-circle" aria-hidden="true"></i>
-           <p class="question-content">What is the answer to this question?</p> <input type="text" class="form-control"
-             id="answer-0" placeholder="answer">
-         </div>
-         <div class="modal-footer flex-center"> <a href="#" class="btn btn-info">Yes</a> <a type="button"
-             class="btn btn-outline-info waves-effect" data-dismiss="modal">No</a> </div>
-       </div>
-     </div>
-   </div>
-   <div class="modal fade" id="modal-1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-     aria-hidden="true">
-     <div class="modal-dialog modal-notify modal-info" role="document">
-       <div class="modal-content text-center">
-         <div class="modal-header d-flex justify-content-center">
-           <p class="heading">Question 2</p>
-         </div>
-         <div class="modal-body"> <i class="fa fa-question-circle" aria-hidden="true"></i>
-           <p class="question-content">What is the answer to this question?</p> <input type="text" class="form-control"
-             id="answer-1" placeholder="answer">
-         </div>
-         <div class="modal-footer flex-center"> <a href="#" class="btn btn-info">Yes</a> <a type="button"
-             class="btn btn-outline-info waves-effect" data-dismiss="modal">No</a> </div>
-       </div>
-     </div>
-   </div>
-   <div class="modal fade" id="modal-2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-     aria-hidden="true">
-     <div class="modal-dialog modal-notify modal-info" role="document">
-       <div class="modal-content text-center">
-         <div class="modal-header d-flex justify-content-center">
-           <p class="heading">Question 3</p>
-         </div>
-         <div class="modal-body"> <i class="fa fa-question-circle" aria-hidden="true"></i>
-           <p class="question-content">What is the answer to this question?</p> <input type="text" class="form-control"
-             id="answer-2" placeholder="answer">
-         </div>
-         <div class="modal-footer flex-center"> <a href="#" class="btn btn-info">Yes</a> <a type="button"
-             class="btn btn-outline-info waves-effect" data-dismiss="modal">No</a> </div>
-       </div>
-     </div>
-   </div>
-   <div class="modal fade" id="modal-3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-     aria-hidden="true">
-     <div class="modal-dialog modal-notify modal-info" role="document">
-       <div class="modal-content text-center">
-         <div class="modal-header d-flex justify-content-center">
-           <p class="heading">Question 4</p>
-         </div>
-         <div class="modal-body"> <i class="fa fa-question-circle" aria-hidden="true"></i>
-           <p class="question-content">What is the answer to this question?</p> <input type="text" class="form-control"
-             id="answer-3" placeholder="answer">
-         </div>
-         <div class="modal-footer flex-center"> <a href="#" class="btn btn-info">Yes</a> <a type="button"
-             class="btn btn-outline-info waves-effect" data-dismiss="modal">No</a> </div>
-       </div>
-     </div>
-   </div>
-   <div class="modal fade" id="modal-4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-     aria-hidden="true">
-     <div class="modal-dialog modal-notify modal-info" role="document">
-       <div class="modal-content text-center">
-         <div class="modal-header d-flex justify-content-center">
-           <p class="heading">Question 5</p>
-         </div>
-         <div class="modal-body"> <i class="fa fa-question-circle" aria-hidden="true"></i>
-           <p class="question-content">What is the answer to this question?</p> <input type="text" class="form-control"
-             id="answer-4" placeholder="answer">
-         </div>
-         <div class="modal-footer flex-center"> <a href="#" class="btn btn-info">Yes</a> <a type="button"
-             class="btn btn-outline-info waves-effect" data-dismiss="modal">No</a> </div>
-       </div>
-     </div>
-   </div>
-
+   
    <%- include ../partials/leaderboard.html %>
+   <a-entity text="value: Hello World;"></a-entity>
 
    <a-scene vr-mode-ui="enabled: false" random-color-environment data-is-home="false" debug-controller="enabled: true"
      environment="preset: arches; seed: 1UyzC8OGJ5; shadow: true"
@@ -162,7 +83,7 @@
        </a-camera>
      </a-entity>
      <a-entity id="portals" mixin="hoverAnimation">
-       <a-entity class="portal" mixin="portal" oasis-portal="href: ../game/3"
+       <a-entity class="portal" mixin="portal" oasis-portal="href: /game/3"
          material="pano: ../assets/img/portal/forest.jpg" position="11.415252756608204 0 -13.784612251788593">
          <a-entity class="portalEffect1" obj-model="obj: ../assets/models/portal/portal.obj" additive
            material="color: #03c1e2; opacity: 0.6; depthWrite: false; shader: flat; transparent: true; src: #portalImg"
@@ -178,7 +99,7 @@
            text="color: #4ef580; align: center; value: EARTH; side: double; width: 4; zOffset: 0.01" position="0 1.3 0">
          </a-entity>
        </a-entity>
-       <a-entity class="portal" mixin="portal" oasis-portal="href: ../game/5"
+       <a-entity class="portal" mixin="portal" oasis-portal="href: /game/5"
          material="pano: ../assets/img/portal/contact.jpg" position="11.308175822351117 0 -5.451873204689466">
          <a-entity class="portalEffect1" obj-model="obj: ../assets/models/portal/portal.obj" additive
            material="color: #03c1e2; opacity: 0.6; depthWrite: false; shader: flat; transparent: true; src: #portalImg"
@@ -194,7 +115,7 @@
            text="color: #4ef580; align: center; value: KNOWHERE; side: double; width: 4; zOffset: 0.01"
            position="0 1.3 0"></a-entity>
        </a-entity>
-       <a-entity class="portal" mixin="portal" oasis-portal="href: ../game/4"
+       <a-entity class="portal" mixin="portal" oasis-portal="href: /game/4"
          material="pano: ../assets/img/portal/volcano.jpg" position="-13.198677054099168 0 -16.292209976693062">
          <a-entity class="portalEffect1" obj-model="obj: ../assets/models/portal/portal.obj" additive
            material="color: #03c1e2; opacity: 0.6; depthWrite: false; shader: flat; transparent: true; src: #portalImg"
@@ -210,7 +131,7 @@
            text="color: #4ef580; align: center; value: VORMIR; side: double; width: 4; zOffset: 0.01"
            position="0 1.3 0"></a-entity>
        </a-entity>
-       <a-entity class="portal" mixin="portal" oasis-portal="href: ../game/2"
+       <a-entity class="portal" mixin="portal" oasis-portal="href: /game/2"
          material="pano: ../assets/img/portal/japan.jpg" position="8.042766309926531 0 8.9402328987326">
          <a-entity class="portalEffect1" obj-model="obj: ../assets/models/portal/portal.obj" additive
            material="color: #03c1e2; opacity: 0.6; depthWrite: false; shader: flat; transparent: true; src: #portalImg"
@@ -226,7 +147,7 @@
            text="color: #4ef580; align: center; value: TITAN; side: double; width: 4; zOffset: 0.01" position="0 1.3 0">
          </a-entity>
        </a-entity>
-       <a-entity class="portal" mixin="portal" oasis-portal="href: ../game/6"
+       <a-entity class="portal" mixin="portal" oasis-portal="href: /game/6"
          material="pano: ../assets/img/portal/egypt.jpg" position="-10 0 -19.21847230000144">
          <a-entity class="portalEffect1" obj-model="obj: ../assets/models/portal/portal.obj" additive
            material="color: #03c1e2; opacity: 0.6; depthWrite: false; shader: flat; transparent: true; src: #portalImg"
@@ -242,7 +163,7 @@
            text="color: #4ef580; align: center; value: NIDAVELLIR; side: double; width: 4; zOffset: 0.01"
            position="0 1.3 0"></a-entity>
        </a-entity>
-       <a-entity class="portal" mixin="portal" oasis-portal="href: ../game ; isHomePortal: true"
+       <a-entity class="portal" mixin="portal" oasis-portal="href: /game ; isHomePortal: true"
          material="pano: ../assets/img/portal/tron.jpg" position="-2 0 3">
          <a-entity class="portalEffect1" obj-model="obj: ../assets/models/portal/portal.obj" additive
            material="color: #03c1e2; opacity: 0.6; depthWrite: false; shader: flat; transparent: true; src: #portalImg"
@@ -258,7 +179,7 @@
            text="color: #4ef580; align: center; value: Start Zone; side: double; width: 4; zOffset: 0.01"
            position="0 1.3 0"></a-entity>
        </a-entity>
-       <a-entity class="portal" mixin="portal" oasis-portal="href: ../game/1 ; isBackPortal: true"
+       <a-entity class="portal" mixin="portal" oasis-portal="href: /game/1 ; isBackPortal: true"
          material="pano: ../assets/img/portal/arches.jpg" position="2 0 3">
          <a-entity class="portalEffect1" obj-model="obj: ../assets/models/portal/portal.obj" additive
            material="color: #03c1e2; opacity: 0.6; depthWrite: false; shader: flat; transparent: true; src: #portalImg"
@@ -311,26 +232,8 @@
            position="0 0 0" rotation="0 0 0" scale="0.3 0.3 0.3"></a-entity>
        </a-entity>
      </a-entity>
-     <a-entity>
-       <a-entity pop-up-question="q_no: 4" id="question-3" class="question-board"
-         obj-model="obj: ../assets/models/question_board/question_board.obj; mtl: ../assets/models/question_board/materials.mtl "
-         position="-23.486650943109794 3 27.586785121303777" scale="25 25 25" rotation="0 -30 0">
-         <a-entity class="portalText"
-           text="color: #4ef580; align: center; value: QUESTION\n4; side: double; width: 1; xOffset: 0.02; zOffset: 0.1"
-           position="0 0 0" rotation="0 0 0" scale="0.3 0.3 0.3"></a-entity>
-       </a-entity>
-     </a-entity>
-     <a-entity>
-       <a-entity pop-up-question="q_no: 5" id="question-4" class="question-board"
-         obj-model="obj: ../assets/models/question_board/question_board.obj; mtl: ../assets/models/question_board/materials.mtl "
-         position="-3 3 -21.52493635863654" scale="25 25 25" rotation="0 0 0">
-         <a-entity class="portalText"
-           text="color: #4ef580; align: center; value: QUESTION\n5; side: double; width: 1; xOffset: 0.02; zOffset: 0.1"
-           position="0 0 0" rotation="0 0 0" scale="0.3 0.3 0.3"></a-entity>
-       </a-entity>
-     </a-entity>
      <a-entity id="mouseCursor" cursor="rayOrigin: mouse" raycaster="objects: [raycastable]; recursive: false"
-       debug-cursor></a-entity> raycaster <script async
+       debug-cursor></a-entity>  <script async
        src="https://www.googletagmanager.com/gtag/js?id=UA-111391431-8"></script>
      <script> </script>
    </a-scene>

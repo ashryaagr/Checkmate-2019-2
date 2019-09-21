@@ -1,3 +1,11 @@
+function setCookie(cname, cvalue, exdays) {
+  var d = new Date();
+  d.setTime(d.getTime() + (exdays*24*60*60*1000));
+  var expires = "expires="+ d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+
 $("#submit").click(function (event) {
 	event.preventDefault();
 	$("#submit").val('Registering...')
@@ -9,21 +17,29 @@ $("#submit").click(function (event) {
 		id_2: $("#id_2").val()
 	};
 	const body = {
-		"query": "mutation register( input : { " + JSON.stringify(details) + " })"
+		"query": "mutation { register( input : {" +
+			`username: "${$("#username").val()}",
+			password: "${$("#password").val()}",
+			id_1: "${$("#id_1").val()}",
+			id_2: "${$("#id_2").val()}"`
+			+ "}) }"
 	};
-	// TODO: This AJAX Call returns a JWT token on success, which is to be stored in a browser cookie
 	$.ajax({
-		url: "/user",
+		url: "/graphql",
 		method: 'POST',
 		data: body,
-		success: function(){
-			alert("Successfuly registered user") ;
-			window.location.href = window.location.origin + "/game"
+		success: function(response){
+			const jwt = response["data"]["register"] ;
+			if (jwt!==null) {
+				alert("Successfuly registered user");
+				setCookie("jwt", jwt, 1);
+				window.location.href = window.location.origin + "/game"
+			}else {
+				alert("Invalid data/username/ids")
+			}
 		},
-		error : function () {
+		error : function (error) {
 			alert("Invalid data/username/ids") ;
-			document.getElementById("submit").disabled = false ;
-			$("#submit").val("Submit")
 		}
   	});
 	document.getElementById("submit").disable = false ;

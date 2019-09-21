@@ -17,6 +17,10 @@ const questionSchema = mongoose.Schema({
 	score_decrement: {
 		type: Number,
 		required: true,
+	},
+	zone: {
+		type: Number,
+		required: true
 	}
 }) ;
 

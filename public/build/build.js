@@ -8076,7 +8076,7 @@ AFRAME.registerComponent('oasis-portal', {
           localStorage.setItem('previousZoneImage', this.sectorType);
           localStorage.setItem('visitedZones', JSON.stringify(visitedZones));
 
-          document.write('gettin data!!');
+          document.write("getting data!!");
           fetch(this.data.href).then(response => {
             window.location.href = this.data.href;
           });

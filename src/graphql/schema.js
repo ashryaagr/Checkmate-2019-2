@@ -6,8 +6,7 @@ const typeDefs = `
 	type Team{
 	    username : String!
 	    score : Int!
-	    x_coordinate : Float!
-	    y_coordinate : Float!
+	    correctly_answered : [ID]
 	}
 	type Question{
 	    _id : ID!
@@ -18,7 +17,7 @@ const typeDefs = `
 	type Query{
 	    info : Team
 	    allTeams: [Team]
-	    allQuestions : [Question]
+	    allQuestions  ( zone : Int! ): [Question]
 	}
     input TeamInput{
         username : String!
@@ -29,7 +28,6 @@ const typeDefs = `
 	type Mutation{
 	    register (input : TeamInput ) : String
 	    login (username : String!, password : String!) : String
-	    logout : Int
 	}
 ` ;
 
