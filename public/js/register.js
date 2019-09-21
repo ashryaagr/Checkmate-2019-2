@@ -5,9 +5,6 @@ function setCookie(cname, cvalue, exdays) {
   document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
 
-function redirect_login() {
-	window.location.href = '/login';
-}
 
 $("#submit").click(function (event) {
 	event.preventDefault();
