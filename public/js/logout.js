@@ -27,7 +27,7 @@ $("#logout").click(function(event){
 				'Authorization': `Bearer ${token}`,
 			},
 			method: 'POST',
-			data: body,
+			data: {},
 			success: function () {
 				alert("Successfuly logged out");
 				window.location.href = window.location.origin + "/logout"
